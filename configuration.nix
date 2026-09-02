@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   # --- Boot / bootloader ---------------------------------------------
@@ -27,7 +32,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [
-      # "ssh-ed25519 AAAA... cody@somewhere"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICDVBIBLn0zxpC5E4mjONRgTsF95regf9Yxz+fqbiW+U cody@wsl"
     ];
   };
 
