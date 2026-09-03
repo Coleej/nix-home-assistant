@@ -46,6 +46,9 @@
     };
   };
 
+  services.tailscale.enable = true;
+  networking.firewall.trustedInterfaces = [ "tailscale0" ];
+
   # QEMU guest agent lets Proxmox report the VM's IP, do clean
   # shutdowns, etc.
   services.qemuGuest.enable = true;

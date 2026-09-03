@@ -13,6 +13,10 @@
       "met"          # weather, used by onboarding
       "radio_browser"
       "shopping_list"
+      "tuya"         # Often needed for AiDOT/generic bulbs
+      "sun"
+      "rest"         # Useful for Baby Buddy API
+      "rest_command"
 
       # Fast zlib compression for the frontend, recommended by upstream
       "isal"
