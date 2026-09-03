@@ -65,3 +65,4 @@ accumulating history — 4 GB is a more comfortable floor.
   can run normally. Once you're happy with the setup, you can migrate
   more of it into this file (themes, custom components, etc.) per the
   NixOS wiki.
+- Test
