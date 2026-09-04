@@ -67,13 +67,32 @@
           domain = "ha_hatch";
         }
       )
+      (
+        (pkgs.runCommand "babybuddy-custom-component" { } ''
+          mkdir -p $out/custom_components/babybuddy
+          cp -r ${
+            pkgs.fetchFromGitHub {
+              owner = "jcgoette";
+              repo = "baby_buddy_homeassistant";
+              rev = "v2.10.0";
+              sha256 = "sha256-1zTF3gK1VSQiH3tWmBygabw3pd2SuARxVHjClPlVS28=";
+            }
+          }/custom_components/babybuddy/* $out/custom_components/babybuddy/
+        '')
+        // {
+          isHomeAssistantComponent = true;
+          domain = "babybuddy";
+        }
+      )
     ];
 
     config = {
-      # Empty attrset = let onboarding create default_config-equivalent
-      # sections via the UI. You can move to a fully declarative
-      # config {} block later once you know what you want pinned.
       default_config = { };
+      babybuddy = {
+        host = "http://192.168.86.100";
+        port = 8111;
+        api_key = "ec7791557f6fa9578a66982ab4deb11e3386a012";
+      };
     };
   };
 
