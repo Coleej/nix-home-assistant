@@ -43,6 +43,7 @@
 
   # Allow wheel users to push unsigned closures over SSH (nix-copy-closure)
   nix.settings.trusted-users = [ "root" "@wheel" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # --- Basic services ----------------------------------------------
   services.openssh = {

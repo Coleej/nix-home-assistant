@@ -88,6 +88,12 @@
 
     config = {
       default_config = { };
+      logger = {
+        default = "warning";
+        logs = {
+          "aidot" = "debug";
+        };
+      };
       babybuddy = {
         host = "http://192.168.86.100";
         port = 8111;
