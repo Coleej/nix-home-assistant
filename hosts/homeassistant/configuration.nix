@@ -41,6 +41,9 @@
   # Allow passwordless sudo for users in wheel (enables autonomous/remote deployments)
   security.sudo.wheelNeedsPassword = false;
 
+  # Allow wheel users to push unsigned closures over SSH (nix-copy-closure)
+  nix.settings.trusted-users = [ "root" "@wheel" ];
+
   # --- Basic services ----------------------------------------------
   services.openssh = {
     enable = true;
