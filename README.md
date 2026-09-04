@@ -40,7 +40,7 @@ nix build .#nixosConfigurations.homeassistant.config.system.build.toplevel
 To deploy to a running NixOS VM:
 
 ```bash
-nixos-rebuild switch --flake .#homeassistant --target-host root@<VM_IP>
+nixos-rebuild switch --flake .#homeassistant --target-host cody@<VM_IP> --use-remote-sudo
 ```
 
 ## Customization

@@ -12,7 +12,7 @@ Compact context for OpenCode sessions. This file supplements `README.md` with ag
 ## Developer Commands
 - **Verify**: `nix flake check` (Catch syntax errors and missing imports).
 - **Build**: `nix build .#nixosConfigurations.homeassistant.config.system.build.toplevel`
-- **Deploy**: `nixos-rebuild switch --flake .#homeassistant --target-host root@<IP>`
+- **Deploy**: `nixos-rebuild switch --flake .#homeassistant --target-host cody@<IP> --use-remote-sudo`
 
 ## Critical Gotchas
 - **Git Tracking**: Nix flakes only see files tracked by Git. Always `git add` new files before building.

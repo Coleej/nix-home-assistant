@@ -26,7 +26,7 @@
   time.timeZone = "America/Chicago"; # Austin, TX
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # --- Users -----------------------------------------------------------
+  # --- Users & Security ------------------------------------------------
   # Replace "cody" / add your SSH key before first deploy.
   users.users.cody = {
     isNormalUser = true;
@@ -37,6 +37,9 @@
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIN5JrBaeYwPljVuPAh5R5tmmfpiITqTyWcWUIs7a8BBq cody@nixos"
     ];
   };
+
+  # Allow passwordless sudo for users in wheel (enables autonomous/remote deployments)
+  security.sudo.wheelNeedsPassword = false;
 
   # --- Basic services ----------------------------------------------
   services.openssh = {
