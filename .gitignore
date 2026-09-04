@@ -1,0 +1,16 @@
+# Nix build outputs
+result
+result-*
+
+# Editor/IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Misc
+udp
