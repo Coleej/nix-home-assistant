@@ -28,6 +28,8 @@
       (buildPythonPackage rec {
         pname = "hatch-rest-api";
         version = "1.34.4";
+        pyproject = true;
+        build-system = [ setuptools ];
         src = fetchPypi {
           pname = "hatch_rest_api";
           inherit version;
