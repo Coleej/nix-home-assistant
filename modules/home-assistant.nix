@@ -10,16 +10,14 @@
     enable = true;
 
     # Components required just to get through onboarding + a sane
-    # baseline. Add Hatch/AiDot/etc. here later — that's the whole
-    # point of doing this declaratively.
+    # baseline. Add other integrations here as needed.
     extraComponents = [
       "analytics"
       "google_translate"
       "met" # weather, used by onboarding
       "radio_browser"
       "shopping_list"
-      "tuya" # Often needed for AiDOT/generic bulbs
-      "aidot"
+
       "sun"
       "rest" # Useful for Baby Buddy API
       "rest_command"
@@ -30,7 +28,7 @@
 
     extraPackages =
       python3Packages: with python3Packages; [
-        python-aidot
+
         (buildPythonPackage rec {
           pname = "hatch-rest-api";
           version = "1.34.4";
@@ -90,9 +88,6 @@
       default_config = { };
       logger = {
         default = "warning";
-        logs = {
-          "aidot" = "debug";
-        };
       };
       babybuddy = {
         host = "http://192.168.86.100";
